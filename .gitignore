@@ -7,3 +7,5 @@
 Assembly-CSharp.csproj
 untitled_game.sln
 .vsconfig
+/.vs
+/obj
