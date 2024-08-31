@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2831721107112391228}
   - component: {fileID: 8033186780200398524}
   - component: {fileID: 7342810681275318523}
-  - component: {fileID: 6467303729830959327}
   - component: {fileID: 7872333221363589681}
+  - component: {fileID: 3843298911143653376}
   m_Layer: 5
   m_Name: Station
   m_TagString: Untagged
@@ -78,18 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6467303729830959327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337339256421647981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 630da7c87c5d3724b8cb5fd4cbe900a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &7872333221363589681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,6 +123,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 50, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &3843298911143653376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337339256421647981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8200b10e3d84f4e338ce07c7975e4489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  _contextMenuPrefab: {fileID: 1743801930485490672, guid: 0497ae2ac9c6b784cb6adb638f70e49e, type: 3}
+  _hasDock: 1
+  _playerOwned: 0
+  _selected: 0
 --- !u!1 &1581473737054177648
 GameObject:
   m_ObjectHideFlags: 0

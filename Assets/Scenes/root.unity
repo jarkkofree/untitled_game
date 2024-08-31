@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843298911143653376, guid: 6acf55ecf80094ee89bbdb5c0dee5b6d, type: 3}
+      propertyPath: _name
+      value: Ore Depot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -312,6 +316,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3415851818405853877, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: _name
+      value: Light Cargo Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415851818405853877, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: _isShip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6218673417592814001, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
       propertyPath: m_text
       value: Light Cargo Ship
@@ -320,7 +332,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2161877803175272156, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -604,11 +617,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3415851818405853877, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: _name
+      value: Shuttle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415851818405853877, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: _isShip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415851818405853877, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: _playerOwned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415851818405853877, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: _isPlayerOwned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218673417592814001, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: m_text
+      value: Shuttle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218673417592814001, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218673417592814001, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218673417592814001, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218673417592814001, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278255360
+      objectReference: {fileID: 0}
     - target: {fileID: 9072870200501001384, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2161877803175272156, guid: f7303a47f706b407db1d59746cbd8d32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -719,7 +769,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3843298911143653376, guid: 6acf55ecf80094ee89bbdb5c0dee5b6d, type: 3}
+      propertyPath: _name
+      value: Refinery
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6467303729830959327, guid: 6acf55ecf80094ee89bbdb5c0dee5b6d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -909,10 +964,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1947809000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8e6f32b15db485d9fc8440a0076b55, type: 3}
+  m_Script: {fileID: 11500000, guid: 59ed9e7af0a744c30bcfb771230234b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ContextMenuPrefab: {fileID: 1743801930485490672, guid: 0497ae2ac9c6b784cb6adb638f70e49e, type: 3}
 --- !u!114 &1947809006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,12 +976,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1947809000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8e90e4b185bd14798b5cffa98d7a1f, type: 3}
+  m_Script: {fileID: 11500000, guid: eb4f132d2d7fc42c19409c8d6a2c234d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectableMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1001 &2071747472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1024,7 +1075,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3843298911143653376, guid: 6acf55ecf80094ee89bbdb5c0dee5b6d, type: 3}
+      propertyPath: _name
+      value: Trade Station
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6467303729830959327, guid: 6acf55ecf80094ee89bbdb5c0dee5b6d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
