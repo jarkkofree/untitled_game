@@ -20,22 +20,4 @@ public class ContextMenu : MonoBehaviour
             _contextMenu.transform.position = Input.mousePosition;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_contextMenu != null && _contextMenu.activeSelf)
-        {
-            if (Input.GetMouseButtonDown(0) && !RectTransformUtility.RectangleContainsScreenPoint(
-                _contextMenu.GetComponent<RectTransform>(), Input.mousePosition, null))
-            {
-                _contextMenu.SetActive(false);
-            }
-        }
-    }
 }
