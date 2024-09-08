@@ -20,4 +20,12 @@ public class ContextMenu : MonoBehaviour
             _contextMenu.transform.position = Input.mousePosition;
         }
     }
+
+    public static void CloseContextMenu()
+    {
+        if (_contextMenu != null)
+        {
+            _contextMenu.SetActive(false);
+        }
+    }
 }
