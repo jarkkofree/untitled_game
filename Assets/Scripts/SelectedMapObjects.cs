@@ -36,15 +36,11 @@ public class SelectedMapObjects : MonoBehaviour
         return _selected.All<MapObject>(obj => obj.IsPlayerOwned && obj.IsShip);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public static List<MapObject> GetSelectedPlayerOwnedShips()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (AllSelectedPlayerOwnedShips())
+            return _selected;
+        else
+            return null;
     }
 }

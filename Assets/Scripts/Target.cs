@@ -16,15 +16,8 @@ public class Target : MonoBehaviour
         target.UITarget();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public static MapObject GetTarget()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return _target;
     }
 }

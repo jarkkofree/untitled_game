@@ -1,19 +1,31 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FlyToCommand : MonoBehaviour
 {
-    [SerializeField] private Button _button;
-    
-    void Awake()
+    private Button _button;
+    private List<MapObject> _subordinates;
+    private MapObject _destination;
+
+    private void Awake()
     {
-        _button.onClick.AddListener(HandleButtonPress);
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(FlyTo);
     }
 
-    void HandleButtonPress()
+    private void FlyTo()
     {
-        Debug.Log("Fly To command issued");
+        _subordinates = SelectedMapObjects.GetSelectedPlayerOwnedShips();
+        _destination = Target.GetTarget();
+        foreach (MapObject ship in _subordinates)
+        {
+            
+        }
+    }
+
+    private void OnDestroy()
+    {
+        _button.onClick.RemoveListener(FlyTo);
     }
 }

@@ -143,7 +143,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2758913929372504894}
-  - component: {fileID: 2767792912386180127}
   m_Layer: 5
   m_Name: StationContextMenu
   m_TagString: Untagged
@@ -171,19 +170,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2767792912386180127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743801930485490672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07674a3662e044345b8a17aa9a2649be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 7347432687438080217}
 --- !u!1 &2450557462352384503
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +527,7 @@ GameObject:
   - component: {fileID: 488492815743237692}
   - component: {fileID: 2575209443555139834}
   - component: {fileID: 7347432687438080217}
+  - component: {fileID: 5547197473042291385}
   m_Layer: 5
   m_Name: ButtonFlyTo
   m_TagString: Untagged
@@ -650,3 +637,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5547197473042291385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167552698441185906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07674a3662e044345b8a17aa9a2649be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
