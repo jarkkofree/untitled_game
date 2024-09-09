@@ -138,7 +138,8 @@ MonoBehaviour:
   _name: 
   _contextMenuPrefab: {fileID: 1743801930485490672, guid: 0497ae2ac9c6b784cb6adb638f70e49e, type: 3}
   _hasDock: 1
-  _playerOwned: 0
+  _isPlayerOwned: 0
+  _canFly: 0
   _selected: 0
 --- !u!1 &1581473737054177648
 GameObject:
@@ -174,8 +175,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -38.81958}
-  m_SizeDelta: {x: 100, y: 22.3609}
+  m_AnchoredPosition: {x: 0, y: -35}
+  m_SizeDelta: {x: 100, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &862187578593452495
 CanvasRenderer:

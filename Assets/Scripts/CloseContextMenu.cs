@@ -14,6 +14,7 @@ public class CloseContextMenu : MonoBehaviour
     private void Close()
     {
         ContextMenu.CloseContextMenu();
+        Target.DeselectTarget();
     }
 
     private void OnDestroy()

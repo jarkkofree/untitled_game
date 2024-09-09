@@ -13,6 +13,7 @@ public class FlyToCommand : MonoBehaviour
         _button.onClick.AddListener(()=> 
         {
             _flyTo.Execute();
+            ContextMenu.CloseContextMenu();
         });
     }
 

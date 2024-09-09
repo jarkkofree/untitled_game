@@ -8,12 +8,17 @@ public class Target : MonoBehaviour
 
     public static void SelectTarget(MapObject target)
     {
-        if (_target != null)
-        {
-            _target.UIUntarget();
-        }
+        DeselectTarget();
         _target = target;
         target.UITarget();
+    }
+
+    public static void DeselectTarget()
+    {
+        if (_target != null)
+            _target.UIUntarget();
+        
+        _target = null;
     }
 
     public static MapObject GetTarget()
