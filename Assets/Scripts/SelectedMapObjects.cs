@@ -31,14 +31,14 @@ public class SelectedMapObjects : MonoBehaviour
             }
     }
 
-    public static bool AllSelectedPlayerOwnedShips()
+    public static bool ShowFlyButton()
     {
-        return _selected.All<MapObject>(obj => obj.IsPlayerOwned && obj.IsShip);
+        return _selected.All<MapObject>(obj => obj.IsPlayerOwned && obj.CanFly);
     }
 
-    public static List<MapObject> GetSelectedPlayerOwnedShips()
+    public static List<MapObject> GetSelectedFlyables()
     {
-        if (AllSelectedPlayerOwnedShips())
+        if (ShowFlyButton())
             return _selected;
         else
             return null;

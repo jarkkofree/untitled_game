@@ -12,13 +12,11 @@ public class ContextMenu : MonoBehaviour
         {
             _contextMenu = Instantiate(ContextMenuPrefab, transform);
         }
-
-        _contextMenu.SetActive(!_contextMenu.activeSelf);
-
-        if (_contextMenu.activeSelf)
+        else
         {
-            _contextMenu.transform.position = Input.mousePosition;
+            _contextMenu.SetActive(!_contextMenu.activeSelf);
         }
+        _contextMenu.transform.position = Input.mousePosition;
     }
 
     public static void CloseContextMenu()
