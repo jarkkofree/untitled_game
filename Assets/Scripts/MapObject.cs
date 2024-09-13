@@ -16,8 +16,10 @@ public class MapObject : MonoBehaviour, IPointerClickHandler
     private TextMeshProUGUI _lable;
     private Transform _transform;
     private Flight _flight;
+    private Pilot _pilot;
 
     public Flight Flight => _flight;
+    public Pilot Pilot => _pilot;
     public string Name => _name;
     public bool IsPlayerOwned => _isPlayerOwned;
     public bool CanFly => _canFly;
@@ -30,7 +32,17 @@ public class MapObject : MonoBehaviour, IPointerClickHandler
 
         if (_canFly)
             _flight = _transform.AddComponent<Flight>();
+            _pilot = _transform.AddComponent<Pilot>();
+    }
 
+    void Update()
+    {
+        if (_flight != null && _pilot != null)
+        {
+            if (!_flight.HasFlyDestination() && _pilot.HasNextDestination())
+                        _flight.SetFlyDestination(_pilot.GetNextDestination());
+        }
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)
