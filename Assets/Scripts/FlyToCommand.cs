@@ -1,19 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FlyToCommand : MonoBehaviour
+public class FlyToCommand : ContextMenuButton
 {
     private Button _button;
-    private FlyTo _flyTo = new();
 
     private void Awake()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(()=> 
         {
-            _flyTo.Execute();
-            ContextMenu.CloseContextMenu();
+            OnClick?.Invoke(this);
         });
     }
 

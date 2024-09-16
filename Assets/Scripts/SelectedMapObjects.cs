@@ -33,7 +33,7 @@ public class SelectedMapObjects : MonoBehaviour
 
     public static bool ShowFlyButton()
     {
-        return _selected.All<MapObject>(obj => obj.IsPlayerOwned && obj.CanFly);
+        return _selected.All<MapObject>(obj => obj.IsPlayerOwned && obj.FlightSpeed > 0);
     }
 
     public static List<MapObject> GetSelectedFlyables()
@@ -41,6 +41,6 @@ public class SelectedMapObjects : MonoBehaviour
         if (ShowFlyButton())
             return _selected;
         else
-            return null;
+            return new List<MapObject>();
     }
 }

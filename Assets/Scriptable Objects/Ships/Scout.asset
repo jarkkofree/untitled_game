@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb972342a28874c8284f25183091c95a, type: 3}
+  m_Script: {fileID: 11500000, guid: e1b816bfa2815e04391393967160b665, type: 3}
   m_Name: Scout
   m_EditorClassIdentifier: 
-  speed: 12
+  FlightSpeed: 40

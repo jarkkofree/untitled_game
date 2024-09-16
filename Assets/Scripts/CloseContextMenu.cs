@@ -1,24 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CloseContextMenu : MonoBehaviour
+public class CloseContextMenu : ContextMenuButton
 {
     private Button _button;
 
     private void Awake()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(Close);
-    }
-
-    private void Close()
-    {
-        ContextMenu.CloseContextMenu();
-        Target.DeselectTarget();
+        _button.onClick.AddListener(() => {
+            OnClick?.Invoke(this);
+        });
     }
 
     private void OnDestroy()
     {
-        _button.onClick.RemoveListener(Close);
+        _button.onClick.RemoveAllListeners();
     }
 }

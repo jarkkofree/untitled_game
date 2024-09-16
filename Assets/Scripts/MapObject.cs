@@ -10,39 +10,29 @@ public class MapObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _contextMenuPrefab;
     [SerializeField] private bool _hasDock;
     [SerializeField] private bool _isPlayerOwned;
-    [SerializeField] private bool _canFly;
     [SerializeField] private bool _selected = false;
+    [SerializeField] private MapObjectAttributes _objectAttributes;
 
     private TextMeshProUGUI _lable;
     private Transform _transform;
-    private Flight _flight;
-    private Pilot _pilot;
 
-    public Flight Flight => _flight;
-    public Pilot Pilot => _pilot;
     public string Name => _name;
     public bool IsPlayerOwned => _isPlayerOwned;
-    public bool CanFly => _canFly;
     public Transform Transform => _transform;
+    public float FlightSpeed => GetFlightSpeed();
 
     void Start()
     {
         _lable = GetComponentInChildren<TextMeshProUGUI>();
         _transform = transform;
-
-        if (_canFly)
-            _flight = _transform.AddComponent<Flight>();
-            _pilot = _transform.AddComponent<Pilot>();
     }
 
-    void Update()
+    private float GetFlightSpeed()
     {
-        if (_flight != null && _pilot != null)
-        {
-            if (!_flight.HasFlyDestination() && _pilot.HasNextDestination())
-                        _flight.SetFlyDestination(_pilot.GetNextDestination());
-        }
-        
+        if (_objectAttributes == null)
+            return 0;
+
+        return _objectAttributes.FlightSpeed;
     }
 
     public void OnPointerClick(PointerEventData eventData)
