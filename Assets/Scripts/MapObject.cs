@@ -20,11 +20,13 @@ public class MapObject : MonoBehaviour, IPointerClickHandler
     public bool IsPlayerOwned => _isPlayerOwned;
     public Transform Transform => _transform;
     public float FlightSpeed => GetFlightSpeed();
+    public static Action<MapObject> OnStarted;
 
     void Start()
     {
         _lable = GetComponentInChildren<TextMeshProUGUI>();
         _transform = transform;
+        OnStarted?.Invoke(this);
     }
 
     private float GetFlightSpeed()
@@ -42,10 +44,10 @@ public class MapObject : MonoBehaviour, IPointerClickHandler
             // Handle right-click
             Debug.Log("Right click detected");
 
-            if (SelectedMapObjects.ShowFlyButton())
+            if (PlayerSelectedMapObjects.ShowFlyButton())
                 ContextMenu.ShowContextMenu(_contextMenuPrefab, transform);
             
-            Target.SelectTarget(this);
+            PlayerTarget.SelectTarget(this);
         }
         else if (eventData.button == PointerEventData.InputButton.Left)
         {
@@ -54,11 +56,11 @@ public class MapObject : MonoBehaviour, IPointerClickHandler
             _selected = !_selected;
             if (_selected)
             {
-                SelectedMapObjects.AddSelection(this);
+                PlayerSelectedMapObjects.AddSelection(this);
             }
             else
             {
-                SelectedMapObjects.RemoveSelection(this);
+                PlayerSelectedMapObjects.RemoveSelection(this);
             }
         }
     }

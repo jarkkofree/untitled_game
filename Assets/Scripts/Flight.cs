@@ -12,6 +12,7 @@ public class Flight : MonoBehaviour
     private Dictionary<MapObject, Queue<Vector3>> _flying = new Dictionary<MapObject, Queue<Vector3>>();
 
     public Transform Transform => _transform;
+    public static Action<Flight> OnStarted;
 
     private void Awake()
     {
@@ -28,11 +29,19 @@ public class Flight : MonoBehaviour
         if (button is not FlyToCommand)
             return;
 
-        var selection = SelectedMapObjects.GetSelectedFlyables();
-        var target = Target.GetTarget();
+        var selection = PlayerSelectedMapObjects.GetSelectedFlyables();
+        var target = PlayerTarget.GetTarget();
 
-        foreach (MapObject ship in selection)
+        Fly(selection, target);
+    }
+
+    public void Fly(List<MapObject> ships, MapObject target)
+    {
+        foreach (MapObject ship in ships)
         {
+            if (ship.FlightSpeed == 0)
+                continue;
+
             if (!_flying.ContainsKey(ship))
                 _flying.Add(ship, new Queue<Vector3>());
 
@@ -43,6 +52,7 @@ public class Flight : MonoBehaviour
     void Start()
     {
         _transform = transform;
+        OnStarted?.Invoke(this);
     }
 
     void Update()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class SelectedMapObjects : MonoBehaviour
+public class PlayerSelectedMapObjects
 {
     private static List<MapObject> _selected = new();
 
