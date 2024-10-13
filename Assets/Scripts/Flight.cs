@@ -14,27 +14,6 @@ public class Flight : MonoBehaviour
     public Transform Transform => _transform;
     public static Action<Flight> OnStarted;
 
-    private void Awake()
-    {
-        ContextMenuButton.OnClick += ContextButtonClicked;
-    }
-
-    private void Destroy()
-    {
-        ContextMenuButton.OnClick -= ContextButtonClicked;
-    }
-
-    private void ContextButtonClicked(ContextMenuButton button)
-    {
-        if (button is not FlyToCommand)
-            return;
-
-        var selection = PlayerSelectedMapObjects.GetSelectedFlyables();
-        var target = PlayerTarget.GetTarget();
-
-        Fly(selection, target);
-    }
-
     public void Fly(List<MapObject> ships, MapObject target)
     {
         foreach (MapObject ship in ships)
@@ -73,7 +52,7 @@ public class Flight : MonoBehaviour
             }
 
             flying.Key.Transform.localPosition +=
-                (destination - flying.Key.Transform.localPosition).normalized * Time.deltaTime * flying.Key.FlightSpeed;
+                flying.Key.FlightSpeed * Time.deltaTime * (destination - flying.Key.Transform.localPosition).normalized;
         }
     }
 }

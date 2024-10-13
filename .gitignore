@@ -9,3 +9,4 @@ untitled_game.sln
 .vsconfig
 /.vs
 /obj
+.DS_Store
